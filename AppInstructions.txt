@@ -1,0 +1,59 @@
+1. Install Node and NPM
+2. Create a folder: NodeJS and Open command prompt and go to this folder by command: cd NodeJS. 
+F:\>md NodeJS
+F:\>cd NodeJS
+3. Create a new directory TTTapp by command: md TTTapp 
+F:\NodeJS>md TTTapp
+3. Run command: cd TTTapp
+F:\NodeJS>cd TTTapp
+4. Run command: npm init
+F:\NodeJS\TTTapp>npm init
+5. Provide following below parameters:
+
+package name: (tttapp)
+version: (1.0.0)
+description: TTT Application
+entry point: (index.js) main.js
+test command:
+git repository: https://github.com/sksorde/TTTapp.git
+keywords: TTT
+author: Sailesh Sorde
+license: (ISC)
+About to write to F:\NodeJS\TTTapp\package.json:
+
+{
+  "name": "tttapp",
+  "version": "1.0.0",
+  "description": "TTT Application",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sksorde/TTTapp.git"
+  },
+  "keywords": [
+    "TTT"
+  ],
+  "author": "Sailesh Sorde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sksorde/TTTapp/issues"
+  },
+  "homepage": "https://github.com/sksorde/TTTapp#readme"
+}
+
+
+Is this OK? (yes) Y
+
+----After this step package.json file will be created in TTTapp directory.
+6. Run command: npm install express --save
+F:\NodeJS\TTTapp>npm install express --save
+7. Create a file main.js in the same directory i.e. TTTapp
+8. Run command: node main.js
+F:\NodeJS\TTTapp>node main.js
+Output: Example app listening on port 3000!
+9. Open internet explorer and run http://localhost:3000
+DONE
+===============================================
