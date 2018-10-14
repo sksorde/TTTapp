@@ -1,0 +1,47 @@
+var express = require('express');
+var path = require('path');
+var fs = require('fs');
+var app = express();
+var bodyParser = require('body-parser');
+var data='';
+
+var multer  = require('multer');
+app.use(express.static(path.join(__dirname,'tmp')));
+
+app.use(bodyParser.urlencoded({extended :false}));
+
+app.use(multer({ dest : '/tmp/' }).single('file1')); 
+
+
+app.get('/express_upload.html',function(req,res){
+req.sendFile(__dirname+"/"+"express_upload.html");
+});
+
+app.post('/form_upload',function(req,res){
+console.log("Name : "+req.file.name);
+console.log("Path"+req.file.path);
+console.log("Type"+req.file.type);
+var myfile = __dirname+"/"+req.file.name;
+
+fs.readFile(req.file.path,function(e,file){
+    fs.writeFile(myfile,data,function(err){
+        if(err){
+            console.log(err);
+        }else{
+            response = {
+                msg : "File uploaded successfully!",
+                filename : req.file.originalname
+            };
+        }
+
+        console.log(response);      
+        res.end(JSON.stringify(response));
+    });
+});
+});
+
+var server=app.listen(8081,function(){
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log("Example app listening at http://%s:%s", host, port)
+});

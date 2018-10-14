@@ -1,5 +1,4 @@
-var http = require('http')
-
+var http = require('http');
 var fs = require('fs');
 
 http.createServer(function(req, res)
@@ -28,6 +27,7 @@ http.createServer(function(req, res)
 
 console.log('Server running at http://localhost:9099 ') 
 
+var fs = require('fs');
 function getStaticFileContent(response,filepath,contentType)
 {
 	fs.readFile(filepath,function(error,data)
