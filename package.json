@@ -1,25 +1,18 @@
 {
-  "name": "tttapp",
+  "name": "csvimport",
   "version": "1.0.0",
-  "description": "TTT Application",
-  "main": "main.js",
+  "description": "CSV to Mongodb import",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sksorde/TTTapp.git"
-  },
-  "keywords": [
-    "TTT"
-  ],
-  "author": "Sailesh Sorde",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sksorde/TTTapp/issues"
-  },
-  "homepage": "https://github.com/sksorde/TTTapp#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "fast-csv": "^2.4.1",
+    "json2csv": "^4.2.1",
+    "mongoose": "^5.3.4"
   }
 }
