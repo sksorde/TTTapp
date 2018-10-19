@@ -1,0 +1,33 @@
+//extends layout
+block content
+  .container
+    h2 NodeJs MongoDB example - View Insert, Update, Delete records
+    .success
+    .error
+    form(id='form1' action='/add' method= 'post')
+      input#id(type='hidden', name='id', value='')
+      table
+        tr
+          td(style='text-align: center')
+            input#firstName(type='text', name='firstName', placeholder='firstName', value='')
+            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            input#lastName(type='text', name='lastName', placeholder='lastName', value='')
+            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            
+            input#subbtn(type='submit', name='sub', value='Add User')
+    table
+      tbody
+        tr
+          th ID
+          th First Name
+          th Last Name
+          th Action
+        if data.length
+         each item in data
+          tr
+            td #{item['_id']}
+            td #{item['firstName']}
+            td #{item['lastName']}
+            td
+               a.editlink(href='javascript:void(0)', data-id='#{item["_id"]}') Edit
+               | &nbsp;&nbsp;
+               a(href='/delete?id=#{item["_id"]}', onclick='return confirm("You are going to delete this record. Continue?")') Delete
